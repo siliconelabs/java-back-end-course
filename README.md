@@ -34,7 +34,9 @@ Homeworks will be posted on the Google Classroom after every class.
 
 
 Course Schedule
-Week	                                   Subject	
+Week	                                   Subject
+
+
 Week 1	Collections
 Generic sınıflar ve metotlar
 Jar (Java Archive) dosyaları Olusturma ve çalıştırma
@@ -69,5 +71,8 @@ Week 12	Junit  mockito
 	
 Week 13  -14                                                                                     Devops
                                                                           Docker container oluşturma AWS, kubernetis
+									  
+									  
+									  https://www.linkedin.com/checkpoint/lg/login-submit
 
 
