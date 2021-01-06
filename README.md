@@ -1,37 +1,73 @@
-## Welcome to GitHub Pages
+## Java back end 5. batch başlıyor
 
-You can use the [editor on GitHub](https://github.com/siliconelabs/java-back-end-course/edit/first-branch/README.md) to maintain and preview the content for your website in Markdown files.
+Java Master Class Syllabus
+Instructor
+Ilhan hoca
+Muhammet Şahin
+Phone
++1 (862) 276-3395
+Email
+muhammet@siliconelabs.com
+Office Location
+271 US 46 Fairfield
+F Building #206
+New Jersey, USA
+Office Hours
+1 - 2 pm
+Wednesday
+Appointment Required	Course Overview
+This course aims to achieve two measurable results: 
+1) Strong knowledge of core Java, 
+2) Bu kurs boyunca Advanced java 8 konuları olan  Generic Sınıflar , File operations, Collections, lambda expressions , Stream API ,Functional interfaces ,Optional sınıflar ile başlayıp Spring framework , Spring boot , Spring data , JPA , Hibernate , RESTful  web servis hazırlanması , Rabbitmq ve Kafka ile Asenkron mesajlaşma , Devops (Docker, Kubernetis, Jenkins, Github)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Required Applications
+Java 8
+Eclipse Neon or Eclipse Photon
+Slack
+Zoom
+Course Materials
+Codes, Slides, Review Questions and Lecture videos will be available on the Learning Platform under European Java Classes section.
 
-### Markdown
+Homework Policy
+Homeworks will be posted on the Google Classroom after every class. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+Course Schedule
+Week	                                   Subject	
+Week 1	Collections
+Generic sınıflar ve metotlar
+Jar (Java Archive) dosyaları Olusturma ve çalıştırma
+	
+Week 2	Github repository kullanımı
+Functional Interfaces
+Lambda expressions
+	
+Week 3	Stream API
+Maven	
+Week 4	Spring Framework
+Spring Boot
+	
+Week 5	Core annotaions (Component, Configuration, Bean,    Order, DependsOn, Qualifier vb.)
+  Bean kavramı ve bean sınıflar	
+Week 6	Spring RestfulAPI oluşturma
+SOAP web servis hazırlama
+	
+Week 7	Spring Data
+Posgre-Sql JPA & Hibernate
+	
+Week 8	Posgre-Sql JPA & Hibernate devamı
+	
+Week 9	Spring asenkron işlemler
+Rabbimq kafka asenkron mesajlaşma
+	
+Week 10	Spring Security
+	
+Week 11	Microservisler
+	
+Week 12	Junit  mockito
+	
+Week 13  -14                                                                                     Devops
+                                                                          Docker container oluşturma AWS, kubernetis
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/siliconelabs/java-back-end-course/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
