@@ -1,0 +1,411 @@
+
+**** Exception olmazsa program sonlanır  exceptionsuz
+public class ExceptionFirst {
+
+
+    public static void main(String[] args) {
+        int i = 12;
+        int j = 2;
+
+            int result = i / (j - 2);
+            System.out.println(result); // 4
+
+
+        doMoreWork();
+    }
+    public static void doMoreWork()
+    {
+        System.out.println("selam do work");
+    }
+}
+
+
+******ilk örnek   try catch  catch hatayı yakalar fırlatır bir alt satırdan devam edilir
+
+
+ int i = 12;
+        int j = 5;
+        try {
+            int result = i / (j - 2);
+            System.out.println(result); // 4
+        } 
+        catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+            ex.printStackTrace(); // Helpful during app development
+        }
+        doMoreWork();
+    }
+    public static void doMoreWork()
+    {sout("dowork icindeyim)}
+	
+	
+	
+	*****   finally  kullanımı
+	
+	
+	
+	  finally{
+            System.out.println("dosyayı kapat yada baglantıyı kes");
+        }
+	
+	
+	
+	
+	
+	
+	*******Metod icinden   exception fırlatılması
+	
+	
+	 public static void main(String[] args) {
+        simpleTryCatch_NoException();
+        simpleTryCatch_WithException();
+
+    }
+
+    private static void simpleTryCatch_NoException() {
+        System.out.println("***************************");
+        System.out.println("Try/Catch with no exception thrown");
+        System.out.println();
+
+        int i = 12;
+        int j = 5;
+
+        try {
+            System.out.println("Performing operation, i = " + i + ", j = " + j);
+            int result = i / (j - 2);
+            System.out.println(result);
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+            //ex.printStackTrace();
+        }
+        System.out.println("***************************");
+        System.out.println();
+
+    }
+
+    private static void simpleTryCatch_WithException() {
+        System.out.println("***************************");
+        System.out.println("Try/Catch with an exception thrown");
+        System.out.println();
+
+        int i = 12;
+        int j = 2;
+
+        try {
+            System.out.println("Performing operation, i = " + i + ", j = " + j);
+            int result = i / (j - 2);
+            System.out.println(result);
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+            //ex.printStackTrace();
+        }
+
+        System.out.println("***************************");
+        System.out.println();
+    }
+ public static void main(String[] args) {
+        simpleTryCatch_NoException();
+        simpleTryCatch_WithException();
+
+    }
+
+    private static void simpleTryCatch_NoException() {
+        System.out.println("***************************");
+        System.out.println("Try/Catch with no exception thrown");
+        System.out.println();
+
+        int i = 12;
+        int j = 5;
+
+        try {
+            System.out.println("Performing operation, i = " + i + ", j = " + j);
+            int result = i / (j - 2);
+            System.out.println(result);
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+            //ex.printStackTrace();
+        }
+        System.out.println("***************************");
+        System.out.println();
+
+    }
+
+    private static void simpleTryCatch_WithException() {
+        System.out.println("***************************");
+        System.out.println("Try/Catch with an exception thrown");
+        System.out.println();
+
+        int i = 12;
+        int j = 2;
+
+        try {
+            System.out.println("Performing operation, i = " + i + ", j = " + j);
+            int result = i / (j - 2);
+            System.out.println(result);
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+            //ex.printStackTrace();
+        }
+
+        System.out.println("***************************");
+        System.out.println();
+    }
+
+	
+	
+***************
+
+multiple catch methods	
+
+birden fazla metod icinden cagrı 
+	
+	
+	
+	public static void main(String[] args) {
+        multipleCatches_WithException();
+		
+        exceptionThrown_CaughtInDifferentMethod();
+    }
+
+    private static void multipleCatches_WithException() {
+       
+     
+
+        int i = 12;
+        int j = 2;
+
+        try {
+         
+            int result = i / (j - 2);
+            System.out.println(result);
+        } 
+		catch (ArithmeticException ex) 
+		{
+            System.out.println("Invalid math operation - " + ex.getMessage());
+        } 
+		catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+
+        System.out.println("***************************");
+        System.out.println();
+    }
+
+    private static void exceptionThrown_CaughtInDifferentMethod() {
+      
+
+
+        methodA();
+
+    
+
+    }
+
+    private static void methodA() {
+      
+        try {
+            methodB();
+        }
+		catch(Exception ex) 
+		{
+            System.out.println("Catching exception in methodA, "  + ex.getMessage());
+        }
+    }
+
+    private static void methodB() {
+       
+
+        methodC();
+    }
+
+    private static void methodC() {
+       
+        int i = 10 / 0;
+
+    }
+	
+	
+	**** checked exceptions and unchecked exceptions
+	
+	checked exception da  eğer compiler bu exceptionu handle etmezse hata olusur  runtime exceptionlar unchecked
+	
+	unchecked exception icinse handle etmese bile compile error olusmaz   ioexception ise checked exception
+	
+	
+	
+	
+	
+	
+	
+	try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {//filenot found exception can occur
+            processFile(reader);
+			
+            String inputLine = null;
+        while((inputLine = reader.readLine()) != null)//IO exception can occur
+		
+             String[] parts = inputLine.split(" ");
+			 
+        MathOperation operation = MathOperation.valueOf(parts[0].toUpperCase());
+        int leftVal = valueFromWord(parts[1]);
+		
+        int rightVal = valueFromWord(parts[2]);
+
+        int result = execute(operation, leftVal, rightVal);
+
+        System.out.println(inputLine + " = " + result);
+
+        } catch(FileNotFoundException ex) {
+            System.out.println("File not found: " + args[0]);
+        } catch(IOException ex) {
+            System.out.println("Error reading file - " + ex.getMessage());
+        } catch(Exception ex) {
+            System.out.println("Error processing file - " + ex.getMessage());
+        }
+		
+		
+		
+		throws kavramı   yukardaki örneği cevirdik
+		
+		
+		    public static void main(String[] args) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
+            processFile(reader);
+
+
+        } catch(FileNotFoundException ex) {
+            System.out.println("File not found: " + args[0]);
+        } catch(IOException ex) {
+            System.out.println("Error reading file - " + ex.getMessage());
+        } catch(Exception ex) {
+            System.out.println("Error processing file - " + ex.getMessage());
+        }
+    }
+
+    private static void processFile(BufferedReader reader) throws IOException {  eger throws demeseydik  try catch ile handle etmek zorundaydık
+        String inputLine = null;
+        while((inputLine = reader.readLine()) != null)
+            performOperation(inputLine);
+    }
+
+    private static void performOperation(String inputLine) {
+        String[] parts = inputLine.split(" ");
+        MathOperation operation = MathOperation.valueOf(parts[0].toUpperCase());
+        int leftVal = valueFromWord(parts[1]);
+        int rightVal = valueFromWord(parts[2]);
+
+        int result = execute(operation, leftVal, rightVal);
+
+        System.out.println(inputLine + " = " + result);
+    }
+
+    static int execute(MathOperation operation, int leftVal, int rightVal) {
+        int result = 0;
+        switch (operation) {
+            case ADD:
+                result = leftVal + rightVal;
+                break;
+            case SUBTRACT:
+                result = leftVal - rightVal;
+                break;
+            case MULTIPLY:
+                result = leftVal * rightVal;
+                break;
+            case DIVIDE:
+                result = leftVal / rightVal;
+                break;
+        }
+        return result;
+    }
+
+    static int valueFromWord(String word) {
+        String[] numberWords = {
+                "zero", "one", "two", "three", "four",
+                "five", "six", "seven", "eight", "nine"
+        };
+        int value = -1;
+        for(int index = 0; index < numberWords.length; index++) {
+            if(word.equals(numberWords[index])) {
+                value = index;
+                break;
+            }
+        }
+        if(value == -1d)
+            value = Integer.parseInt(word);
+
+        return value;
+    }
+
+}
+
+
+****** new operatoruyle  exception foırlatıp icine mesajı gonderebiliriz
+	
+	  static int execute(MathOperation operation, int leftVal, int rightVal) {
+        int result = 0;
+        switch (operation) {
+            case ADD:
+                result = leftVal + rightVal;
+                break;
+            case SUBTRACT:
+                result = leftVal - rightVal;
+                break;
+            case MULTIPLY:
+                result = leftVal * rightVal;
+                break;
+            case DIVIDE:
+                if(rightVal == 0) {
+//                    IllegalArgumentException exception =   ;//buda io exception sınıfından türüyor
+//                        new IllegalArgumentException("Zero rightVal not permitted with divide operation");
+//                    throw exception;
+                    throw new IllegalArgumentException("Zero rightVal not permitted with divide operation");
+                }
+                result = leftVal / rightVal;
+                break;
+        }
+        return result;
+    }
+	
+	***********custom exception turetilebilir ama exception sınıfından inherit almalıdır
+	public class InvalidStatementException extends Exception {
+    public InvalidStatementException(String message) {
+        super(message);
+    }
+    public InvalidStatementException(String message, Exception ex) {
+        super(message, ex);
+    }
+}
+
+
+ private static void performOperation(String inputLine) throws InvalidStatementException {
+       
+            String[] parts = inputLine.split(" ");
+            if (parts.length != 3)
+                throw new InvalidStatementException(//bu bizim turettiğimiz exception   buda checked kabul edilir runtime haricindedir cunku 
+				            sadece runtime exceptin uncheckeddir
+                        "Statement must have 3 parts: operation leftVal rightVal");
+            MathOperation operation = MathOperation.valueOf(parts[0].toUpperCase());
+            int leftVal = valueFromWord(parts[1]);
+            int rightVal = valueFromWord(parts[2]);
+
+            int result = execute(operation, leftVal, rightVal);
+
+            System.out.println(inputLine + " = " + result);
+       
+      
+    }
+	
+	
+	*************log basma
+	 static void writeInvalidStatementExceptionToLog(InvalidStatementException ex, String inputLine) {
+        System.err.println("");
+        System.err.println("*********************************");
+        System.err.println("Information written to log system");
+        System.err.println("*********************************");
+
+        System.err.println(ex.getMessage() + " - " + inputLine);
+        if(ex.getCause() != null)
+            System.err.println("  caused by " + ex.getCause());
+        ex.printStackTrace(System.err);
+    }
+	
+	
